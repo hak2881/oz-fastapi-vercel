@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer, String, DATETIME, ForeignKey, Enum
+from sqlalchemy import Column, Integer, String, DATETIME, ForeignKey, Enum, TIMESTAMP
 from sqlalchemy.orm import relationship
 
 from database import Base, engine
@@ -27,7 +27,7 @@ class Task(Base):
     task_id = Column(Integer, primary_key=True, autoincrement=True, index=True)
     title = Column(String, nullable=False)
     status = Column(Enum(TaskStatus), default=TaskStatus.PENDING, nullable=False)
-    created_at = Column(DATETIME, default=datetime.utcnow)
+    created_at = Column(TIMESTAMP, default=datetime.utcnow)
 
     user_id = Column(ForeignKey("users.user_id"), nullable=False)
     user = relationship("User", back_populates="tasks")

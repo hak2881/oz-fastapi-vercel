@@ -17,7 +17,7 @@ packaging==24.2
 passlib==1.7.4
 pluggy==1.5.0
 pyasn1==0.6.1
-pydantic==2.10.5
+pydantic==2.10.5r
 pydantic_core==2.27.2
 pytest==8.3.4
 python-jose==3.3.0
